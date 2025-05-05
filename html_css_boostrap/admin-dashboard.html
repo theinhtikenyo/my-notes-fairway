@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <style>
+        /* Dark theme styles */
+        .dark-theme {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .dark-theme .bg-light {
+            background-color: #1e1e1e !important;
+        }
+
+        .dark-theme .text-muted {
+            color: #b3b3b3 !important;
+        }
+
+        .dark-theme .btn-outline-secondary {
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        .dark-theme .btn-outline-secondary:hover {
+            background-color: #ffffff;
+            color: #121212;
+        }
+
+        /* New dark theme styles for menu items */
+        .dark-theme .list-group-item {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border: 1px solid #333;
+        }
+
+        .dark-theme .list-group-item .text-muted {
+            color: #b3b3b3 !important;
+        }
+
+        /* Dark theme styles for table */
+        .dark-theme table {
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+
+        .dark-theme table th,
+        .dark-theme table td {
+            border-color: #333;
+        }
+
+        .dark-theme table th {
+            background-color: #2c2c2c;
+        }
+
+        /* Dark theme styles for table rows */
+        .dark-theme table tr {
+            background-color: #1e1e1e;
+        }
+        
+        /* Dark theme styles for navbar nav links */
+        .dark-theme .navbar.bg-light {
+            background-color: #1e1e1e !important;
+            border-bottom: 1px solid #333;
+        }
+        .dark-theme .navbar .nav-link {
+            color: #ffffff !important;
+        }
+
+        /* Updated completely dark theme styles for table */
+        .dark-theme table,
+        .dark-theme table thead,
+        .dark-theme table tbody,
+        .dark-theme table th,
+        .dark-theme table td {
+            background-color: #1e1e1e !important;
+            color: #ffffff !important;
+            border-color: #333 !important;
+        }
+
+        .dark-theme table thead th {
+            background-color: #2c2c2c !important;
+        }
+        .dark-theme .alert  {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border-color: #121212;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row g-0">
+            <div class="col-2 bg-light">
+                <h1 class="text-primary text-center py-4">
+                    <i class="fa fa-bus"></i>
+                    <span class="h4 ms-2 d-none d-lg-inline">App</span>
+                </h1>
+                <ul class="list-group text-center text-lg-start mb-4">
+                    <li class="list-group-item">
+                        <span class="text-muted d-none d-lg-inline">Controls</span>
+                    </li>
+                    <li class="list-group-item active">
+                        <i class="fa fa-home"></i>
+                        <span class="ms-2 d-none d-lg-inline">Home</span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-users"></i>
+                        <span class="ms-2 d-none d-lg-inline">Users<span class="badge bg-danger ms-1">20</span></span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-flag"></i>
+                        <span class="ms-2 d-none d-lg-inline">Issues</span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-cogs"></i>
+                        <span class="ms-2 d-none d-lg-inline">Settings</span>
+                
+                    </li>
+                </ul>
+                <ul class="list-group text-center text-lg-start mb-4">
+                    <li class="list-group-item">
+                        <span class="text-muted d-none d-lg-inline">Actions</span>
+                    </li>
+
+                    <li class="list-group-item">
+                        <i class="fa fa-user"></i>
+                        <span class="ms-2 d-none d-lg-inline active">New User</span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-pencil"></i>
+                        <span class="ms-2 d-none d-lg-inline">Update Data</span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-calendar"></i>
+                        <span class="ms-2 d-none d-lg-inline">Add Events</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-10 bg-secondary">
+                <nav class="navbar bg-light navbar-expand">
+                    <div class="container-fluid">
+                        <div></div>
+                        <ul class="navbar-nav">
+                            <!-- Theme Toggler -->
+                            <li class="nav-item">
+                                <button id="theme-toggler" class="nav-link">
+                                    <i class="fa-solid fa-moon"></i>
+                                </button>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                    <i class="fa-solid fa-user-circle"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fa fa-user me-2"></i>
+                                        Profile
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fa fa-sign-out me-2"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fa-solid fa-cog"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="p-3">
+                    <div class="alert alert-success downloadnow">
+                        <i class="fa fa-download me-2"></i>A new version of admin dashboard is released. <a href="#">Download Now!</a>
+                    </div>
+                    <h1 class="h6 text-white-50">Quick Stats</h1>
+                    <div class="row flex-column flex-lg-row">
+                        <div class="col mb-3">
+                            <div class="bg-light p-4">
+                                <h3>1,024</h3>
+                                <span class="text-success">
+                                    <i class="fa-solid fa-chart-line me-2"></i>
+                                    Daily Users
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col mb-3">
+                            <div class="bg-light p-4">
+                                <h3>1,024</h3>
+                                <span class="text-success">
+                                    <i class="fa-solid fa-chart-line me-2"></i>
+                                    Weekly Users
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col mb-3">
+                            <div class="bg-light p-4">
+                                <h3>1,024</h3>
+                                <span class="text-success">
+                                    <i class="fa-solid fa-chart-line me-2"></i>
+                                    Monthly Users
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col mb-3">
+                            <div class="bg-light p-4">
+                                <h3>1,024</h3>
+                                <span class="text-success">
+                                    <i class="fa-solid fa-chart-line me-2"></i>
+                                    Yearly Users
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="p-3">
+                    
+                    
+                    <div class="row flex-column flex-lg-row">
+                        <div class="col mb-3">
+                            <h1 class="h6 text-white-50">Location</h1>
+                            <div class="bg-light p-3">
+                                
+                                <span class="text-muted">Regional</span>
+                                <div class="progress mb-4 mt-2" style="height: 5px">
+                                    <div class="progress-bar
+                                    bg-success w-25"></div>
+                                </div>
+                                <span class="text-muted">Global</span>
+                                <div class="progress mb-4 mt-2" style="height: 5px">
+                                    <div class="progress-bar
+                                    bg-primary w-50"></div>
+                                </div>
+                                <span class="text-muted">Local</span>
+                                <div class="progress mb-4 mt-2" style="height: 5px">
+                                    <div class="progress-bar
+                                    bg-danger w-75"></div>
+                                </div>
+                                <span class="text-muted">Internal</span>
+                                <div class="progress mb-3 mt-2" style="height: 5px">
+                                    <div class="progress-bar
+                                    bg-info w-50"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col mb-3">
+                            <h1 class="h6 text-white-50">Data</h1>
+                            <div class="bg-light p-3">
+                                <div class="text-end">
+                                    <button class="btn btn-sm
+                                    btn-outline-secondary">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <button class="btn btn-sm
+                                btn-outline-secondary">
+                                <i class="fas fa-sort-amount-up"></i>
+                            </button>
+                            <button class="btn btn-sm
+                            btn-outline-secondary">
+                            <i class="fas fa-filter"></i>
+                        </button>
+                    </div>
+                    
+                    <table class="table mb-2">
+                        <tr>
+                            <th>ID</th>
+                            <th>Age Group</th>
+                            <th>Data</th>
+                            <th>Progress</th>
+                        </tr>
+                        
+                                    <tr>
+                                        <td>1</td>
+                                        <td>20-30</td>
+                                        <td>19%</td>
+                                        <td>
+                                            <i class="fa fa-chart-pie"></i>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>2</td>
+                                        <td>30-40</td>
+                                        <td>40%</td>
+                                        <td>
+                                            <i class="fa fa-chart-bar"></i>
+                                        </td>
+                                    </tr>
+                            
+                                    <tr>
+                                        <td>3</td>
+                                        <td>40-50</td>
+                                        <td>20%</td>
+                                        <td>
+                                            <i class="fa fa-chart-line"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>50-60</td>
+                                        <td>11%</td>
+                                        <td>
+                                            <i class="fa fa-chart-pie"></i>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center p-3">
+        <small class="text-muted">&copy;  Copyright 2025</small>
+    </footer>
+
+    <script>
+        // JavaScript for theme toggling
+        const themeToggler = document.getElementById('theme-toggler');
+        const body = document.body;
+
+        themeToggler.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            const icon = themeToggler.querySelector('i');
+            if (body.classList.contains('dark-theme')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+    </script>
+
+ 
+</body>
+</html>

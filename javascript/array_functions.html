@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        users = [
+            {name :"Alice", age: 24},
+            {name :"Bob", age: 18},
+            {name :"John", age: 19},
+            {name :"Edwin", age: 20},
+            {name :"David", age: 24},
+            {name :"Lisa", age: 23},
+        ]
+
+        let names = users.map(user => user.name);
+        let u20 = users.filter(user => user.age <=20);
+        let result = users.filter(user => user.age <=20).map(user => user.name)
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+browser need 3 components
+(1) Rendering engine (webkit-opensource-apple)
+(2) JS engine (v8 by google)
+(3) UI
+
+Choromium's tech stack> webkit + v8 js engine
+
+Choromium> chrome, edge, opera, brave, arc
+
+IE,Firefox(standalone)
+
+v8 > node, deno , bun (run outside of Choromium) (javascript run time technology)
+
+javascript is used for DOM manipulation
+
+javascript sees html as an object tree.
+
+
+let = block scope
+var = function scope
+
+recommend to use let keyword
+
+user['age'] =24
+user.age = 25
+
+normal function //
+function twice(n) {
+    return n *2
+}
+
+arrow function //
+function twice(n) => {
+    return n *2
+}
+
+minimized
+
+function twice() => n *2
+
+[1,2,3,4,5].map(n => n*n)
+[1,2,3,4,5].filter(n => n != 3)
+
+buitl in javascript dialog > alert, confirm , prompt
+
+
+property shorthand
+let name = "Alice"
+let age = 22
+
+let user = {name,age} // equal to let user = {name : name, age: age}
+
+array destructure
+
+let arr = [11,22,33]
+let [a,b,c] = arr 
+
+object destructure
+let user = { name:"Bob", age:24 }
+let { name,age } = user
+
+array unpack 
+let arr1 = [1,2]
+let arr2 = [3,4]
+let arr3 = [...arr1,...arr2]
+
+React state management, 
+data , UI
+if data change , UI change.
+
+
+local storage javascript,
+let user = { name: "Alice", age: 22}
+
+localStorage.setItem("user", user)
+
+localStorage.getItem("user") //outputs [Object Object]
+
+localStorage.setItem("user", JSON.stringify(user))
+
+localStorage.getItem("user") // outputs object string but string format
+
+JSON.parse( localStorage.getItem("user")) // convert string to object again

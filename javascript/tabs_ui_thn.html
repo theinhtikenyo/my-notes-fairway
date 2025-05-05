@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs UI My Take</title>
+    <style>
+        .tabs {
+            list-style: none;
+            display: flex;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+
+        }
+        .tabs li {
+            background:black;
+            color: white;
+            width: 100px;
+            height: 30px;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+       
+        }
+
+
+        .box {
+            padding: 15px 15px 15px 15px;
+            background: deepskyblue;
+        }
+
+        #box1,#box2 {
+            padding: 30px;
+            min-height: 400px;
+            background: white;
+            
+        }
+        #box2 {
+            display: none;
+        }
+
+        #tab2 {
+            opacity: 0.5;
+        }
+
+
+    </style>
+</head>
+<body>
+        
+
+        <div class="box">
+            <ul class="tabs">
+                <li id="tab1">Tab 1</li>
+                <li id="tab2">Tab 2</li>
+            </ul>
+            <div id="box1">Box1</div>
+            <div id="box2"> Box2 </div>
+        </div>
+        
+
+    
+    <script>
+        document.querySelector("#tab1").onclick = a;
+        document.querySelector("#tab2").onclick = b;
+        
+        function a() {
+            document.querySelector("#box1").style.display = "block";
+            document.querySelector("#box2").style.display = "none";
+            document.querySelector("#tab1").style.opacity = 1;
+            document.querySelector("#tab2").style.opacity = 0.5;
+            
+        }
+        function b() {
+            document.querySelector("#box1").style.display = "none";
+            document.querySelector("#box2").style.display = "block";
+            document.querySelector("#tab1").style.opacity = 0.5;
+            document.querySelector("#tab2").style.opacity = 1;
+
+        }
+    </script>
+
+</body>
+</html>

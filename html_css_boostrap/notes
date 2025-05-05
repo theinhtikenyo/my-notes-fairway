@@ -1,0 +1,30 @@
+Crl + W (close tab)
+Crtl + P (open files)
+
+Crtl + G (go the line)
+
+Crtl + Shift + O (search symbols)
+
+crtl + D
+
+lorem50
+
+attribute selector
+input[type=text]
+
+
+pseudo class
+a:hover {
+    color:red;
+}
+
+input:focus {
+    color: orange;
+}
+
+ul li:nth:child(2n) {
+    color: red;
+}
+
+box-sizing : border box makes padding exclusive
+d

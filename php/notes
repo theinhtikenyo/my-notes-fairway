@@ -1,0 +1,48 @@
+super global variable $_GET ( it captures user input value if form's method is get which is default)
+rest 2 global variable are $_POST and $_REQUEST
+NOTE: $_REQUEST can capture both GET and POST data
+
+http characteristics
+
+client need to 
+
+1. pull technology
+2. stateless
+
+cookie stored at browser at client side (file)
+client request with cookie and client receive requested resource.
+
+session (file, at server stored)
+client receive session id with resoucre
+
+generally , sessions works with cookie
+
+
+(Some PHP features)
+#need global keyword;
+$name = "Alice";
+
+function hello() {
+    global $name;
+    echo "HEllo $name;
+}
+hello()
+
+#type casting (:int is return type)
+function add(int $a , int $b) :int {
+    return $a + $b;
+}
+
+add (1,2)
+
+
+#php does not allow same function names
+
+
+include("math.php");
+
+math.php
+function add($a + $b) {
+    echo $a + $b
+}
+#remark it add all functions inside math.php
